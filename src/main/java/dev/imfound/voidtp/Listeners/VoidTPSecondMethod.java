@@ -11,6 +11,9 @@ public class VoidTPSecondMethod implements Listener {
 
     @EventHandler
     public void onVoid(EntityDamageEvent e){
+        if(!(e.getEntity() instanceof Player)) {
+            return;
+        }
         Player p = (Player) e.getEntity();
         if(e.getEntity() instanceof Player) {
             if(e.getCause() == EntityDamageEvent.DamageCause.VOID) {
